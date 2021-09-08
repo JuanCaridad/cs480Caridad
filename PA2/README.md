@@ -24,7 +24,7 @@ After running the cmake command use this in the terminal to run the program:
 
 ###Keyboard and Mouse Instructions
 
-Reverse Orbit - A or Left Mouse Button__
-Pause and Unpause Orbit - D or Right Mouse Button__
-Reverse Spin - W__
-Pause and Unpause Spin - S__
+Reverse Orbit - A or Left Mouse Button <br />
+Pause and Unpause Orbit - D or Right Mouse Button <br />
+Reverse Spin - W <br />
+Pause and Unpause Spin - S <br />
