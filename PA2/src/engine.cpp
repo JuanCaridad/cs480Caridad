@@ -89,16 +89,16 @@ void Engine::Keyboard()
     		m_running = false;
     		break;
     	case SDLK_a:
-    		m_graphics->m_cube->rev_Orbit = !(m_graphics->m_cube->rev_Orbit); //change orbit
+    		m_graphics->m_cube->rev_Orbit = !(m_graphics->m_cube->rev_Orbit); //reverse the orbit
     		break;
     	case SDLK_d:
-    		m_graphics->m_cube->pauseOrbit = !(m_graphics->m_cube->pauseOrbit); //pause orbit
+    		m_graphics->m_cube->pauseOrbit = !(m_graphics->m_cube->pauseOrbit); //pause the orbit
     		break;
     	case SDLK_w:
-    		m_graphics->m_cube->rev_Spin = !(m_graphics->m_cube->rev_Spin); //change spin
+    		m_graphics->m_cube->rev_Spin = !(m_graphics->m_cube->rev_Spin); //reverse the spin
     		break;
     	case SDLK_s:
-    		m_graphics->m_cube->pauseSpin = !(m_graphics->m_cube->pauseSpin); //pause spin
+    		m_graphics->m_cube->pauseSpin = !(m_graphics->m_cube->pauseSpin); //pause the spin
     		break;
     	default:
     		break;
@@ -106,13 +106,14 @@ void Engine::Keyboard()
   }
   else if(m_event.type == SDL_MOUSEBUTTONDOWN)
   {
+  	//handle mouse button events here
   	switch(m_event.button.button)
   	{
   		case SDL_BUTTON_LEFT:
-  			m_graphics->m_cube->rev_Orbit = !(m_graphics->m_cube->rev_Orbit); //reverse orbit
+  			m_graphics->m_cube->rev_Orbit = !(m_graphics->m_cube->rev_Orbit); //reverse the orbit
   			break;
   		case SDL_BUTTON_RIGHT:
-  			m_graphics->m_cube->pauseOrbit = !(m_graphics->m_cube->pauseOrbit); //pause orbit
+  			m_graphics->m_cube->pauseOrbit = !(m_graphics->m_cube->pauseOrbit); //pause the orbit
   			break;
   		default:
   			break;

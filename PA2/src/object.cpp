@@ -87,9 +87,10 @@ void Object::Update(unsigned int dt)
 {
 	spin_angle += dt * M_PI/1000;
 	
+	//when buttons pressed bool value changes
 	if(!pauseOrbit)
 	{
-		if(rev_Orbit)
+		if(rev_Orbit)//if orbit not paused and key to reverse orbit is pressed
 		{
 			rot_angle -= dt * M_PI/1000;
 		}
@@ -100,7 +101,7 @@ void Object::Update(unsigned int dt)
 	}
 	if(!pauseSpin)
 	{
-		if(rev_Spin)
+		if(rev_Spin)//checking if both not paused and reverse spin key is pressed change based on reverse orbit value
 		{
 			if(rev_Orbit)
 			{
@@ -129,12 +130,11 @@ void Object::Update(unsigned int dt)
 	}
   
 	glm::vec3 axis(0.0f, 5.0f, 0.0f);
-	glm::mat4 orbit = glm::rotate(rot_angle, axis);
-	glm::mat4 translate = glm::translate(glm::mat4(1.0f), glm::vec3(8.0f, 0.0f, 0.0f));
-	glm::mat4 spin = glm::rotate(glm::mat4(1.0f), (spin_angle), glm::vec3(0.0f, 1.0f, 0.0f));
-
-	model = orbit * translate * spin;
-	  
+	
+	model = glm::rotate(rot_angle, axis) 
+		* glm::translate(glm::mat4(1.0f), glm::vec3(8.0f, 0.0f, 0.0f))
+		* glm::rotate(glm::mat4(1.0f), (spin_angle), glm::vec3(0.0f, 1.0f, 0.0f));
+		
 }
 
 glm::mat4 Object::GetModel()

@@ -29,6 +29,11 @@ int main(int argc, char **argv)
 			}
 		}
 	}
+	else
+	{
+		std::cerr << "Run Parameters: ./Tutorial -v vertexShader -f fragmentShader" << std::endl; 
+		return 0;
+	}
 	
 	// Start an engine and run it then cleanup after
 	Engine *engine = new Engine("Tutorial Window Name", 800, 600);
