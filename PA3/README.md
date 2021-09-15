@@ -16,13 +16,13 @@ make
 ./Tutorial
 ```
 
-###Command Line Instructions
+### Command-Line Instructions
 After running the cmake command use this in the terminal to run the program:
 ```bash
 ./Tutorial -v vert.glsl -f frag.glsl
 ```
 
-###Keyboard and Mouse Instructions
+### Keyboard-and-Mouse Instructions
 When the program begins to reverse, pause and unpause and object, the user must first select which object. <br />
 Select Planet - 1(not the numpad) <br />
 Select Moon - 2(not the numpad) <br />
