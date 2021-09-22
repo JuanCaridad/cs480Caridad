@@ -1,0 +1,53 @@
+#ifndef OBJECT_H
+#define OBJECT_H
+
+#include <vector>
+#include "graphics_headers.h"
+
+class Object
+{
+  public:
+    Object(char* path, float scale, float orbitSpeed, float spinSpeed, Object *p);
+    ~Object();
+    void Update(unsigned int dt, glm::mat4 origin);
+    void Render();
+
+    glm::mat4 GetModel();
+    glm::mat4 GetPosition();
+    
+    Object *parent;
+    
+    void Scale(bool scalar);
+    void OrbitSpeed(bool speed);
+    void SpinSpeed(bool speed);
+    
+    bool rev_Orbit;
+    bool pauseOrbit;
+    bool rev_Spin;
+    bool pauseSpin;
+
+  private:
+    glm::mat4 model;
+    std::vector<glm::vec3> Vertices;
+    std::vector<unsigned int> Indices;
+    GLuint VB;
+    GLuint IB;
+    
+    glm::mat4 position;//position of object
+    float rot_angle;
+    float spin_angle;
+    
+    bool Moon;
+    
+    //variables used for scaling
+    float defaultScale, scaleMultiplier, maxScale, minScale;
+    
+    //variables for object orbit and spin
+    float defaultOrbSpeed, defaultSpinSpeed, orbSpeedMultiplier,spinSpeedMultiplier, maxSpeed, minSpeed;
+    
+    bool loadOBJ(char* path, std::vector<glm::vec3> & out_vertices, std::vector<unsigned int> & out_indices);
+    
+    
+};
+
+#endif /* OBJECT_H */
