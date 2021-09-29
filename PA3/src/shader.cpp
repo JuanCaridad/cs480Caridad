@@ -41,7 +41,7 @@ bool Shader::AddShader(GLenum ShaderType, std::string path)
   if(ShaderType == GL_VERTEX_SHADER)
   {
   	std::ifstream shaderFile;
-  	shaderFile.open (path, std::ifstream::in);
+  	shaderFile.open ("../shaders/" + path, std::ifstream::in);
   	if(shaderFile.is_open())
   	{
   		s.assign((std::istreambuf_iterator<char>(shaderFile)), 				(std::istreambuf_iterator<char>()));
@@ -56,7 +56,7 @@ bool Shader::AddShader(GLenum ShaderType, std::string path)
   else if(ShaderType == GL_FRAGMENT_SHADER)
   {
 	std::ifstream shaderFile;
-  	shaderFile.open (path, std::ifstream::in);
+  	shaderFile.open ("../shaders/" + path, std::ifstream::in);
   	if(shaderFile.is_open())
   	{
   		s.assign((std::istreambuf_iterator<char>(shaderFile)), 				(std::istreambuf_iterator<char>()));
